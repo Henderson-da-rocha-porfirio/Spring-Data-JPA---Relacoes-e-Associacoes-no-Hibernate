@@ -1,46 +1,4 @@
-# JPA AssociationsMappings
-### 1. Como Exemplo temos um Shopping App onde nós não pomos todos os dados dentro de uma única tabela no database como na tabela Order:
-|   id   |  productname  |    description    |    shippingaddress    |
-| :---         |     :---:      |          ---: |     :---:      |
-|   |      |    |
-### 2. Geralmente criamos as regras do nosso database em tabelas separadas que parece mais o apropriado no armazenamento dos dados dessa forma, onde a comunicação entre estas tabelas se dá em forma de relacionametos através de primary e foreign keys:
-#### a. Pedidos (Order)
-|   :---   | address_id  |    product_id    |
-| :---:        |     ---:      |     :---:      |
-|   |      |
-#### b. Produto
-|   id   | ---:  |
-| :---         |     ---:      |
-|   |      |
-#### c. Endereco
-|   id   | street  |    city    |
-| :---         |     ---:      |     :---:      |
-|   |      |
-### 3. É por isso que precisamos de um AssociationsMappings. Para podermos, através dessas associações de mapeamento entre elas, navegar através delas.
-### 4. E teremos várias queries sofrendo joins e etc que serão gerados pelo hibernate ou alguma outra implementação do JPA.
-# Relacionamentos
-### 1. ONE TO ONE
-#### a. Pessoa - Uma Pessoa tem uma Licenca
-|   Long id   |
-|     :---:      |
-| Licenca licenca |
-|   |
-#### b. Licenca - E Licenca pertence a uma Pessoa em particular
-|   Long id   |
-|     :---:      |
-| Pessoa pessoa |
-|   |
-### 2. MANY TO MANY -
-#### a. Encomenda (Order) - Uma Encomenda pode ter múltiplos produtos.
-|   Long id   |
-|    :---:    |
-| Set < Produto > produtos |
-|   |
-#### b. Produto - E um Produto pode pertencer a várias encomendas.
-|   Long id   |
-|    :---:    |
-| String name |
-|Set < Encomenda > encomendas |
+# One To Many e Many To One
 ### 3. ONE TO MANY e MANY TO ONE
 #### a. Cliente - Um cliente pode ter vários números de telefone //  Da perspectiva do cliente o relacionamento é ONE TO MANY.
 |   Long id   |
