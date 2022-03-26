@@ -6,13 +6,13 @@ import javax.persistence.*;
 public class Pessoa {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO) // Isso fará termos o mesmo ID em Pessoa e em Licenca.
 	private Long id;
 	private String firstName;
 	private String lastName;
 	private int age;
-	@OneToOne(mappedBy = "pessoa")
-	private Licenca licenca;
+	@OneToOne(mappedBy = "pessoa") // Isso é o outro lado da configuração do relacionamento OneToOne. A outra parte do relacionamento precisa ser feito em Licenca introduzindo: @OneToOne(mappedBy = "pessoa") no atributo Licenca.
+	private Licenca licenca;   		//@OneToOne(cascade = CascadeType.ALL) + @JoinColumn(name="pessoa_id") no atributo: private Pessoa pessoa;
 
 	public Long getId() {
 		return id;

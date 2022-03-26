@@ -72,6 +72,9 @@
 ### 2. @OneToMany
 ### 3. @ManyToOne
 ### 4. @ManyToMany
+### 5. @Temporal (TemporalType.DATE) = Ao utilizarmos o Tipo Date, precisamos marcá-los com a @Temporal de javax.persistence
+### 6. @JoinTable = E usando @JoinTable, estamos falando para o hibernate que esta é uma tabela Join e também informará o que são as chaves na tabela do database em questão e como elas estão associadas.
+### 7. @joinColumns =  coluna join da tabela.
 # Entendendo as Associações
 ### 1. [OneToMany] ->  Cliente 1(um cliente)  ------------------>  *(Vários NumeroTelefone) NumeroTelefone <- [ManyToOne]
 ### 2. Quando declaramos uma lista de NumeroTelefone dentro da classe Cliente, porque um Cliente pode ter vários numerosTelefone, e do lado do NumeroTelefone nós definirmos um objeto cliente por causa de múltiplos numerosTelefone pertecerem a um único cliente. Então colocamos a seguinte anotação:

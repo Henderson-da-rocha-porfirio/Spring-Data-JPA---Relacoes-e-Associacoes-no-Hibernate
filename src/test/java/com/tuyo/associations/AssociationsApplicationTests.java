@@ -111,7 +111,7 @@ public class AssociationsApplicationTests {
 	}
 
 	@Test
-	public void testOneToOneCreateLicenca() {
+	public void testOneToOneCreateLicenca() { // Relacionamento OneToOne
 		Licenca licenca = new Licenca();
 		licenca.setType("CAR");
 		licenca.setValidFrom(new Date());
